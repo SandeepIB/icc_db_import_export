@@ -1,0 +1,33 @@
+# Backup directories
+backup/
+*.backup/
+/tmp/backup*
+
+# SQL dump files
+*.sql
+*.sql.gz
+
+# MySQL config files
+my.cnf
+.my.cnf
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local
