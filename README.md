@@ -125,19 +125,19 @@ export LOCAL_MYSQL_PASSWORD=YourPassword
 
 ### SSH Transfer Examples
 
-Direct remote to local transfer:
+Direct remote to local transfer with multithreading:
 ```bash
-./ssh_mysql_transfer.sh remote_to_local icc_store icc_store_local
+./ssh_mysql_transfer.sh remote_to_local icc_store icc_store_local 6 /tmp/backup
 ```
 
 Export from remote server only:
 ```bash
-./ssh_mysql_transfer.sh export icc_store icc_store.sql
+./ssh_mysql_transfer.sh export icc_store 6 /tmp/backup
 ```
 
 Import to local database only:
 ```bash
-./ssh_mysql_transfer.sh import icc_store_local icc_store.sql
+./ssh_mysql_transfer.sh import icc_store_local 6 /tmp/backup
 ```
 
 # icc_db_import_export
