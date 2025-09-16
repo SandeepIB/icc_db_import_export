@@ -108,4 +108,36 @@ Large tables are automatically split into chunks and processed in parallel for f
 - Use 4-8 threads for optimal performance
 - Ensure adequate MySQL buffer pool size
 - Use SSD storage for backup directory
-- Run on local network to minimize latency# icc_db_import_export
+- Run on local network to minimize latency
+
+## SSH Remote Transfer
+
+For transferring databases from remote servers via SSH, use `ssh_mysql_transfer.sh`:
+
+### Environment Variables for SSH Transfer
+```bash
+export REMOTE_HOST=10.100.23.56
+export REMOTE_USER=sgupta
+export REMOTE_MYSQL_USER=sgupta
+export LOCAL_MYSQL_USER=root
+export LOCAL_MYSQL_PASSWORD=YourPassword
+```
+
+### SSH Transfer Examples
+
+Direct remote to local transfer:
+```bash
+./ssh_mysql_transfer.sh remote_to_local icc_store icc_store_local
+```
+
+Export from remote server only:
+```bash
+./ssh_mysql_transfer.sh export icc_store icc_store.sql
+```
+
+Import to local database only:
+```bash
+./ssh_mysql_transfer.sh import icc_store_local icc_store.sql
+```
+
+# icc_db_import_export
