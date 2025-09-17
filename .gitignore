@@ -1,33 +1,8 @@
-# Backup directories
-backup/
-*.backup/
-/tmp/backup*
-
-# SQL dump files
-*.sql
-*.sql.gz
-
-# MySQL config files
-my.cnf
-.my.cnf
-
-# Log files
+# Client branch - ignore server-side files
+mysql_parallel_dump_restore.sh
+ssh_mysql_transfer.sh
+analyze_remote_db.sh
+simple_multithread_import.sh
+large_tables.conf
 *.log
-
-# Temporary files
 *.tmp
-*.temp
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Environment files
-.env
-.env.local
