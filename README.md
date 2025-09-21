@@ -114,6 +114,22 @@ Large tables are automatically split into chunks and processed in parallel for f
 
 For transferring databases from remote servers via SSH, use `ssh_mysql_transfer.sh`:
 
+### Database Analysis for Large Databases
+
+For large databases (40GB+), first analyze the remote database to auto-configure chunking:
+
+```bash
+export REMOTE_HOST=10.100.23.56
+export REMOTE_USER=sgupta
+export REMOTE_MYSQL_USER=sgupta
+./analyze_remote_db.sh icc_store
+```
+
+This will:
+- Analyze table sizes and row counts
+- Auto-generate `large_tables.conf` with optimal chunk sizes
+- Provide recommended transfer settings
+
 ### Environment Variables for SSH Transfer
 ```bash
 export REMOTE_HOST=10.100.23.56
